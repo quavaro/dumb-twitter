@@ -52,6 +52,15 @@ app.get("/api/tweets", async (_, res) => {
   res.json(await tweets.toArray());
 });
 
+// Fetch tweets from a particular user from the database
+app.get("/api/tweets/:username", async (_, res) => {
+  const tweetsCollection = await dbClient.collection("tweets");
+  let query = {};
+  query[user] = username;
+  const tweets = tweetsCollection.find(query);
+  res.json(await tweets.toArray());
+});
+
 // Post a new tweet
 app.post("/api/tweet", async (req, res) => {
   const body = req.body;
