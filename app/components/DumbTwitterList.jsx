@@ -12,7 +12,7 @@ const DumbTwitterList = function(props) {
     const tweetComponents = tweets.map((tweet, idx) => {
         return (
             <li key={idx}> {/* In a list of components, each one needs a unique key, or else you'll get a warning */}
-                <a href="#" onClick={(event) => {event.preventDefault(); handleClick(tweet.user)}}><strong>{tweet.user}:</strong></a> {tweet.message}
+                <a href="#" class="user" onClick={(event) => {event.preventDefault(); handleClick(tweet.user)}}>{tweet.user}:</a> <span class="dweet">{tweet.message}</span>
             </li>
         )
     })

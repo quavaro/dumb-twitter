@@ -24,9 +24,11 @@ const DumbTwitter = function() {
   }, []); // Remember, an empty array as the second argument means "just do this once"
 
   return (
-    <div>
+    <div id="main">
       <h1>Dumb Twitter</h1>
+      <hr />
       <DumbTwitterForm onTweeted={fetchTweets}/>
+      <hr />
       <DumbTwitterList tweets={tweets} onUserClick={fetchUserTweets}/>
     </div>
   );

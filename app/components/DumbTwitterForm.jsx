@@ -41,11 +41,11 @@ const DumbTwitterForm = function(props) {
                 User: 
                 <input type="text"value={user} onChange={updateUser}/>
             </label>
-            <label>
+            <label id="message-label" >
                 Message: 
-                <input type="text" value={message} onChange={updateMessage}/>
+                <textarea id="message" value={message} onChange={updateMessage}></textarea>
             </label>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Send your dumb tweet" id="sendDweet"/>
         </form>
     );
 }
