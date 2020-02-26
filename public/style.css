@@ -10,16 +10,15 @@ h1 {
     
     font-size: 3rem;
 }
-#sendDweet, #backButton {
+#sendDweet, button {
     background-color: #1da1f2;
-    border-width: 3px;
-    border-color: #1da1f2;
     color:#fff;
-    font-family: 'Cormorant Unicase', futura, Arial, sans-serif;
+    border-width: 0;
+    font-family: Futura, Verdana, Sans-Serif;
     font-size: 1rem;
     border-radius: 9999px;
     margin: 1.5rem;
-    display: block;
+    padding:1rem;
 }
 textarea, #message-label {
     height: 100px;
@@ -45,7 +44,7 @@ li {
     list-style-type: none;
     list-style-position: inside;
     border: 1px solid black;
-    border-radius: 9999px;
+    border-radius: 50px;
     padding: 1rem;
     background-color: #000;
     text-align: center;

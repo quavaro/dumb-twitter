@@ -17,7 +17,12 @@ const DumbTwitter = function() {
     const body = await response.json();
     setTweets(body);
   }
-
+  const deleteTweet = async (tweetId) => {
+    const deleteResponse = await fetch('/api/delete/'+tweetId, {method: 'delete'});
+    const refetch = await fetch("api/tweets");
+    const body = await refetch.json();
+    setTweets(body);
+  }
   // When this component loads, fetch tweets from the API
   React.useEffect(() => {
     fetchTweets();
@@ -29,7 +34,7 @@ const DumbTwitter = function() {
       <hr />
       <DumbTwitterForm onTweeted={fetchTweets}/>
       <hr />
-      <DumbTwitterList tweets={tweets} onUserClick={fetchUserTweets}/>
+      <DumbTwitterList tweets={tweets} onUserClick={fetchUserTweets} onDelete={deleteTweet}/>
       <button id="backButton" onClick={fetchTweets}>Dumbest Twitter Homepage</button>
     </div>
   );

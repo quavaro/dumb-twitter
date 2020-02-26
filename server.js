@@ -5,6 +5,7 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 
 const mongo = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
 let url = process.env.MONGODB_URI || "mongodb://localhost:27017/dumb-twitter";
 const app = express();
 let dbClient;
@@ -31,19 +32,12 @@ app.use(express.static('public'));
 app.get("/", async (req, res) => {
 
     try {
-     
-        
-        // Finally, report back the number of pageviews
         res.sendFile(__dirname + '/app/index.html');
-
-        
     } catch (e) {
         res.status(500).send("Some kind of terrible error happened");
         console.log(e);
     }
 });
-
-
 
 // Fetch tweets from the database
 app.get("/api/tweets", async (_, res) => {
@@ -73,6 +67,13 @@ app.post("/api/tweet", async (req, res) => {
     res.sendStatus(200);
   }
 });
+
+app.delete('/api/delete/:tweetId', async (req, res) =>  {
+  const tweetsCollection = await dbClient.collection("tweets");
+  const deletedTweet = await tweetsCollection.findOneAndDelete({ _id : ObjectId(req.params.tweetId) });
+  res.send(deletedTweet);
+})
+
 // listen for requests :)
 
 // We're not using async/await here because there's no top-level await
