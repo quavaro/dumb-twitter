@@ -1,8 +1,6 @@
-Starter React App on Glitch
+Dumb Twitter
 ===========================
 
-This app is a very small scaffold to get you started using React and Webpack.
+Dumb Twitter is a less useful and more mentally corruptive than real Twitter, potentially, if you put some effort into it.
 
-It's been copied by @starakaj for your enjoyment. You can find the original at https://glitch.com/~starter-react.
-
-This project relates to video 2 of 5 in the [React Starter Kit](https://glitch.com/react-starter-kit) video series.
+Tweet, delete and view all tweets from the same username.
