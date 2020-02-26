@@ -5,8 +5,8 @@ const React = require('react');
 const DumbTwitterList = function(props) {
     const tweets = props.tweets || [];
   
-    const handleClick = (userClick) => {
-        if (props.onUserClick) props.onUserClick(userClick);
+    const handleClick = (userClicked) => {
+        if (props.onUserClick) props.onUserClick(userClicked);
     }
     // The map function returns a new array, calling the function on each element of the array
     const tweetComponents = tweets.map((tweet, idx) => {

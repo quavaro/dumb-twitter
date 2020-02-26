@@ -25,11 +25,12 @@ const DumbTwitter = function() {
 
   return (
     <div id="main">
-      <h1>Dumb Twitter</h1>
+      <h1>Dumbest Twitter</h1>
       <hr />
       <DumbTwitterForm onTweeted={fetchTweets}/>
       <hr />
       <DumbTwitterList tweets={tweets} onUserClick={fetchUserTweets}/>
+      <button id="backButton" onClick={fetchTweets}>Dumbest Twitter Homepage</button>
     </div>
   );
 }
